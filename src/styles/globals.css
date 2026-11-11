@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink-900 antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 100% -10%, rgba(198, 149, 46, 0.07), transparent 60%),
+      radial-gradient(900px 500px at -10% 0%, rgba(178, 58, 87, 0.05), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-wine-200 text-wine-900;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #e2d8cd transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #e2d8cd;
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold-400/70 ring-offset-2 ring-offset-cream;
+  }
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .surface {
+    @apply rounded-2xl border border-ink-200/70 bg-porcelain shadow-card;
+  }
+
+  .label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-500;
+  }
+
+  .numeric {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum' 1;
+  }
+
+  .hero-aurora {
+    background-image:
+      radial-gradient(700px 340px at 88% 0%, rgba(214, 172, 72, 0.35), transparent 60%),
+      radial-gradient(600px 320px at 10% 110%, rgba(178, 58, 87, 0.55), transparent 62%),
+      linear-gradient(135deg, #241a1a 0%, #1c1714 48%, #2c1d20 100%);
+  }
+
+  .gold-hairline {
+    background: linear-gradient(90deg, transparent, rgba(214, 172, 72, 0.55), transparent);
+  }
+
+  .scrim {
+    background: radial-gradient(80% 60% at 50% 0%, rgba(20, 16, 14, 0.55), rgba(20, 16, 14, 0.72));
+    backdrop-filter: blur(6px);
+  }
+
+  .shimmer-track {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-track::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    animation: shimmer 1.8s infinite;
+  }
+
+  .table-row-hover {
+    @apply transition-colors duration-150 hover:bg-ink-50/70;
+  }
+
+  .nav-scroll {
+    scrollbar-width: none;
+  }
+
+  .nav-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-1 {
+    animation-delay: 60ms;
+  }
+
+  .animate-delay-2 {
+    animation-delay: 120ms;
+  }
+
+  .animate-delay-3 {
+    animation-delay: 180ms;
+  }
+
+  .animate-delay-4 {
+    animation-delay: 240ms;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

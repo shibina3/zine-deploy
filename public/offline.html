@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zine — Offline</title>
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+        background: radial-gradient(900px 500px at 100% 0%, rgba(198, 149, 46, 0.12), transparent 60%),
+          radial-gradient(700px 400px at 0% 100%, rgba(178, 58, 87, 0.1), transparent 55%), #faf7f2;
+        color: #1c1714;
+        padding: 24px;
+      }
+      .card {
+        max-width: 440px;
+        width: 100%;
+        background: #fffdfa;
+        border: 1px solid rgba(226, 216, 205, 0.9);
+        border-radius: 24px;
+        padding: 40px 32px;
+        text-align: center;
+        box-shadow: 0 18px 40px -18px rgba(28, 23, 20, 0.25);
+      }
+      .mark {
+        width: 56px; height: 56px; margin: 0 auto 20px; border-radius: 16px;
+        display: grid; place-items: center; background: #2e0d15;
+        color: #e3c574; font-family: Georgia, serif; font-size: 28px;
+        border: 1px solid rgba(214, 172, 72, 0.4);
+      }
+      h1 { font-family: Fraunces, Georgia, serif; font-size: 26px; margin: 0 0 10px; font-weight: 500; }
+      p { color: #5a4c44; line-height: 1.6; margin: 0 0 22px; font-size: 14px; }
+      button {
+        appearance: none; border: 0; cursor: pointer; padding: 12px 22px; border-radius: 999px;
+        background: #1c1714; color: #fbf8ee; font-size: 14px; font-weight: 600;
+      }
+      button:hover { background: #3d332d; }
+      small { display: block; margin-top: 18px; color: #9c8b80; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="mark">Z</div>
+      <h1>You are offline</h1>
+      <p>
+        Zine needs the network once to download the application. After that, billing,
+        customers and appointments keep working offline. Reconnect to load the app shell again.
+      </p>
+      <button onclick="location.reload()">Try again</button>
+      <small>Salon data always stays on this device.</small>
+    </div>
+  </body>
+</html>
